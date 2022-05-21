@@ -12,12 +12,12 @@ module.exports = (sequelize, Sequelize) => {
         horarioInicio: {
             type: Sequelize.TIME,
             defaultValue: '00:00',
-            field: 'hour'
+            field: 'horarioInicio'
         },
         horarioFim: {
             type: Sequelize.TIME,
             defaultValue: '00:00',
-            field: 'hour'
+            field: 'horarioFim'
         },
     });
     return Curso;
