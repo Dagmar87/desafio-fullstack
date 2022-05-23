@@ -27,3 +27,20 @@
 1. Fidelidade às instruções e ao cenário.
 2. Clean Code e boas práticas.
 3. Boas práticas de versionamento.
+
+------------------------------------------------------------------------
+
+### Para rodar projeto
+
+#### PostgreSQL:
+- sudo -u postgres createdb cursodb
+- psql -h localhost -U postgres -d cursodb
+- select * from cursos;
+
+#### NodeJS:
+- npm install
+- node server.js
+
+#### Angular:
+- npm install
+- ng serve --port 8081 
