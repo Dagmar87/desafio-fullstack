@@ -1,13 +1,19 @@
-<p>
-  <mat-toolbar color="primary">
-    <span>Gerência de Cursos</span>
-    <span class="espacamento-toolbar"></span>
-    <button mat-icon-button ngSubmit="logout()">
-      <mat-icon>logout</mat-icon>
-    </button>
-  </mat-toolbar>
-</p>
-
-<mat-card-content>
-  <router-outlet></router-outlet>
-</mat-card-content>
+<div>
+  <nav class="navbar navbar-expand navbar-dark bg-dark">
+    <a href="#" class="navbar-brand">Gerência de Cursos</a>
+    <div class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a routerLink="cursos" class="nav-link">Cursos</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="add" class="nav-link">Adicionar</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="login" class="nav-link">Logout</a>
+      </li>
+    </div>
+  </nav>
+  <div class="container mt-3">
+    <router-outlet></router-outlet>
+  </div>
+</div>

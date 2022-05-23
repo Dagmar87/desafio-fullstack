@@ -1,3 +1,5 @@
+import { AddCursoComponent } from './components/add-curso/add-curso.component';
+import { CursoDetailsComponent } from './components/curso-details/curso-details.component';
 import { CursosListComponent } from './components/cursos-list/cursos-list.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -9,7 +11,10 @@ const routes: Routes = [
   {
     path: '', component: HeaderComponent,
     children: [
-      { path: '', component: CursosListComponent }
+      { path: '', redirectTo: 'cursos', pathMatch: 'full' },
+      { path: 'cursos', component: CursosListComponent },
+      { path: 'cursos/:id', component: CursoDetailsComponent},
+      { path: 'add', component: AddCursoComponent}
     ]
   }
 ];
