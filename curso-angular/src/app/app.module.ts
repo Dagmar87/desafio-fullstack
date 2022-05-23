@@ -16,13 +16,17 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { CursosListComponent } from './components/cursos-list/cursos-list.component';
+import { AddCursoComponent } from './components/add-curso/add-curso.component';
+import { CursoDetailsComponent } from './components/curso-details/curso-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     HeaderComponent,
-    CursosListComponent
+    CursosListComponent,
+    AddCursoComponent,
+    CursoDetailsComponent
   ],
   imports: [
     BrowserModule,
