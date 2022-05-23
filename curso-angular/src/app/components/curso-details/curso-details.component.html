@@ -1,1 +1,135 @@
-<p>curso-details works!</p>
+<div *ngIf="viewMode; else editable">
+  <div *ngIf="currentCurso.id">
+    <h4>Curso</h4>
+    <div>
+      <label><strong>Nome do curso:</strong></label> 
+      {{ currentCurso.nome }}
+    </div>
+    <div>
+      <label><strong>Professor:</strong></label> 
+      {{ currentCurso.professor }}
+    </div>
+    <div>
+      <label><strong>Sala:</strong></label> 
+      {{ currentCurso.sala }}
+    </div>
+    <div>
+      <label><strong>Horario de Inicio:</strong></label> 
+      {{ currentCurso.horarioInicio }}
+    </div>
+    <div>
+      <label><strong>Horario de Fim:</strong></label> 
+      {{ currentCurso.horarioFim }}
+    </div>
+    <a
+      class="badge badge-warning"
+      routerLink="/cursos/{{ currentCurso.id }}"
+    >
+      Editar
+    </a>
+  </div>
+  <div *ngIf="!currentCurso">
+    <br />
+    <p>Clique em um curso...</p>
+  </div>  
+</div>
+<ng-template #editable>
+  <div *ngIf="currentCurso.id" class="edit-form">
+    <h4>Curso</h4>
+    <form>
+      <div class="form-group">
+        <label for="nome">Nome do Curso:</label>
+        <input
+          placeholder="Nome do Curso"
+          type="text"
+          class="form-control"
+          id="nome"
+          required
+          [(ngModel)]="currentCurso.nome"
+          name="nome"
+        />
+      </div>
+      <div class="form-group">
+        <label for="professor">Professores:</label>
+        <select
+          type="text"
+          class="form-select"
+          id="professor"
+          required
+          [(ngModel)]="currentCurso.professor"
+          name="professor"
+        >
+          <option disabled>Selecione os Professores</option>
+          <option>Carlos Alberto de Sousa</option>
+          <option>Lorena Mercedes de Lisboa</option>
+          <option>João Daniel Silveira</option>
+          <option>Anna Carolina Beckman</option>
+          <option>Raimundo Carvalho Neto</option>
+          <option>Marcelo Uraki de Alegre</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="sala">Salas:</label>
+        <select
+          type="number"
+          class="form-select"
+          id="sala"
+          required
+          [(ngModel)]="currentCurso.sala"
+          name="sala"
+        >
+          <option disabled>Selecione as Salas</option>
+          <option>100</option>
+          <option>117</option>
+          <option>230</option>
+          <option>345</option>
+          <option>476</option>
+          <option>598</option>
+          <option>634</option>
+          <option>659</option>
+          <option>732</option>
+          <option>863</option>
+          <option>965</option>
+          <option>996</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Inicio:</label>
+        <input           
+          class="form-control" 
+          type="time"
+          id="horarioInicio"
+          required
+          [(ngModel)]="currentCurso.horarioInicio"
+          name="horarioInicio"
+        />
+      </div>
+      <div class="form-group">
+        <label>Fim:</label>
+        <input 
+          class="form-control" 
+          type="time"
+          id="horarioFim"
+          required
+          [(ngModel)]="currentCurso.horarioFim"
+          name="horarioFim"
+        />
+      </div>
+    </form>
+    <button class="badge badge-danger mr-2" (click)="deleteCurso()">
+      Excluir
+    </button>    
+    <button
+      type="submit"
+      class="badge badge-success mb-2"
+      (click)="updateCurso()"
+    >
+      Atualizar
+    </button>
+    <p>{{ message }}</p>
+  </div>
+  <div *ngIf="!currentCurso.id">
+    <br />
+    <p>Não é possível acessar este curso...</p>
+  </div>
+</ng-template>
