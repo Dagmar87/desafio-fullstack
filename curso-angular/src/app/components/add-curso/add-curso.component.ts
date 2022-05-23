@@ -14,7 +14,7 @@ export class AddCursoComponent implements OnInit {
     professor: '',
     sala: 0,
     horarioInicio: new Date(),
-    horarioFim: new Date(),
+    horarioFim: new Date()
   }
 
   submitted = false;

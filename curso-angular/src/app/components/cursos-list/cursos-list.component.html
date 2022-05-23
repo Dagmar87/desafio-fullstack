@@ -1,1 +1,28 @@
-<p>cursos-list works!</p>
+<div class="list row">
+  <div class="col-md-6">
+    <h4>Lista de Cursos</h4>
+    <ul class="list-group">
+      <li
+        class="list-group-item"
+        *ngFor="let curso of cursos; let i = index"
+        [class.active]="i == currentIndex"
+        (click)="setActiveCurso(curso, i)"
+      >
+        <h2><strong>{{ curso.nome }}</strong></h2>
+        <br/>
+        <p>Prof. {{ curso.professor }}</p>
+        <p>Sala {{ curso.sala }}</p>
+        <p>{{ curso.horarioInicio}} às {{ curso.horarioFim }}</p>
+      </li>    
+    </ul>
+    <button class="m-3 btn btn-sm btn-danger" (click)="removeAllCursos()">
+      Excluir tudo
+    </button>
+  </div>
+  <div class="col-md-6">
+    <app-curso-details>
+      [viewMode] = "true"
+      [currentCurso] = "currentCurso"
+    </app-curso-details>
+  </div>
+</div>
