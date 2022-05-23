@@ -1,1 +1,92 @@
-<p>add-curso works!</p>
+<div>
+  <div class="submit-form">
+    <div class="align-center text-center">
+      <h2>Detalhe do Curso</h2>
+    </div>
+    <div *ngIf="!submitted">
+      <div class="form-group">
+        <label for="nome">Nome do Curso:</label>
+        <input
+          placeholder="Nome do Curso"
+          type="text"
+          class="form-control"
+          id="nome"
+          required
+          [(ngModel)]="curso.nome"
+          name="nome"
+        />
+      </div>
+      <div class="form-group">
+        <label for="professor">Professores:</label>
+        <select
+          type="text"
+          class="form-select"
+          id="professor"
+          required
+          [(ngModel)]="curso.professor"
+          name="professor"
+        >
+          <option disabled>Selecione os Professores</option>
+          <option>Carlos Alberto de Sousa</option>
+          <option>Lorena Mercedes de Lisboa</option>
+          <option>João Daniel Silveira</option>
+          <option>Anna Carolina Beckman</option>
+          <option>Raimundo Carvalho Neto</option>
+          <option>Marcelo Uraki de Alegre</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="sala">Salas:</label>
+        <select
+          type="number"
+          class="form-select"
+          id="sala"
+          required
+          [(ngModel)]="curso.sala"
+          name="sala"
+        >
+          <option disabled>Selecione as Salas</option>
+          <option>100</option>
+          <option>117</option>
+          <option>230</option>
+          <option>345</option>
+          <option>476</option>
+          <option>598</option>
+          <option>634</option>
+          <option>659</option>
+          <option>732</option>
+          <option>863</option>
+          <option>965</option>
+          <option>996</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Inicio:</label>
+        <input           
+          class="form-control" 
+          type="time"
+          id="horarioInicio"
+          required
+          [(ngModel)]="curso.horarioInicio"
+          name="horarioInicio"
+        />
+      </div>
+      <div class="form-group">
+        <label>Fim:</label>
+        <input 
+          class="form-control" 
+          type="time"
+          id="horarioFim"
+          required
+          [(ngModel)]="curso.horarioFim"
+          name="horarioFim"
+        />
+      </div>
+      <button (click)="saveCurso()" class="btn btn-success">Salvar</button>
+    </div>
+    <div *ngIf="submitted">
+      <h4>Curso salvo com sucesso!</h4>
+      <button class="btn btn-success" (click)="newCurso()">Adicionar</button>
+    </div>
+  </div>
+</div>

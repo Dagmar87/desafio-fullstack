@@ -5,6 +5,6 @@ export class Curso {
   nome?: string;
   professor?: string;
   sala?: number;
-  horarioInicio?: Time;
-  horarioFim?: Time;
+  horarioInicio?: Date;
+  horarioFim?: Date;
 }
